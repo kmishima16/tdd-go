@@ -2,12 +2,20 @@ package main
 
 import "testing"
 
-func TestMultiplication(t *testing.T) {
-	dollar := Dollar{5}
-	dollar.times(2)
-	expect := 10
-	actual := dollar.amount
-	if expect != actual {
-		t.Errorf("expect %d, actual %d", expect, actual)
-	}
+func TestMultiplicationtA(t *testing.T) {
+	t.Run("$5 * 2 = 10", func(t *testing.T) {
+		dollar := Dollar{5}
+		product := dollar.times(2)
+		expect := 10
+		actual := product.amount
+		if expect != actual {
+			t.Errorf("expect %d, actual %d", expect, actual)
+		}
+		product = dollar.times(3)
+		expect = 15
+		actual = product.amount
+		if expect != actual {
+			t.Errorf("expect %d, actual %d", expect, actual)
+		}
+	})
 }
