@@ -22,7 +22,12 @@ func TestMultiplicationtA(t *testing.T) {
 		expect := true
 		actual := Dollar{5}.equals(Dollar{5})
 		if expect != actual {
-			t.Errorf("expect %d, actual %d", expect, actual)
+			t.Errorf("expect %v, actual %v", expect, actual)
+		}
+		expect = false
+		actual = Dollar{5}.equals(Dollar{6})
+		if expect != actual {
+			t.Errorf("expect %v, actual %v", expect, actual)
 		}
 	})
 }
