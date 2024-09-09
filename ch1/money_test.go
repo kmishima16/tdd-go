@@ -18,4 +18,11 @@ func TestMultiplicationtA(t *testing.T) {
 			t.Errorf("expect %d, actual %d", expect, actual)
 		}
 	})
+	t.Run("equals()の実装", func(t *testing.T) {
+		expect := true
+		actual := Dollar{5}.equals(Dollar{5})
+		if expect != actual {
+			t.Errorf("expect %d, actual %d", expect, actual)
+		}
+	})
 }
